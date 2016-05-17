@@ -11,15 +11,16 @@
   <!-- angular -->
   <script src="/bower_components/angular/angular.js"></script>
 
-  <!-- jQuery, socket io -->
+  <!-- Bootstrap scripts and jquery script (used by bootstrap) -->
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="/bower_components/socket.io-client/socket.io.js"></script>
-
   <script src="/bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- socket io client and angular-socket-io-->
+  <script src="/bower_components/socket.io-client/socket.io.js"></script>
   <script src="/bower_components/angular-socket-io/socket.js"></script>
 
-  <!-- controllers -->
+  <!-- controller and service -->
   <script src="/js/controllers.js"></script>
   <script src="/js/service.js"></script>
 
@@ -37,9 +38,13 @@
       <div class="panel-heading">
         <h2 class="panel-title">Players logged on: {{player}}</h2>
         <h3>{{waitText}}</h3>
-        <span><button class='btn btn-warning' ng-click='startTimer()'>Begin Timer</button></span>
-        <hr>
-        <h1 class="panel-title text-center">{{question.num1}} * {{question.num2}} = __</h1>
+
+        <div ng-if='player==2'>
+          <button class='btn btn-warning btn-block' ng-click='startTimer(); start=true'>Begin Timer</button>
+          <hr>
+          <h1 ng-if='start' class="panel-title text-center">{{question.num1}} * {{question.num2}} = __</h1>
+        </div>
+
 
       </div>
       <div class="panel-body">

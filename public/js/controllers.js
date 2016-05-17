@@ -32,7 +32,7 @@ app.controller('mainCtrl', function($scope, Service, mySocket, $timeout) {
   mySocket.on('gameStart', () => {
     if($scope.player) {
       $scope.waitText= 'Press Start to Begin!'
-    }
+ee    }
   })
 
   mySocket.on('winner', (winner) => {
