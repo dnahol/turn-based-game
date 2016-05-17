@@ -48,8 +48,10 @@ ee    }
 
 $scope.startTimer = () => {
   console.log('timer!');
+  $scope.waitText = 'Your timer has started! You have 20 seconds!'
 $timeout(function () {
   mySocket.emit('timeout', score);
+  $scope.waitText='Your time is up! Waiting for oponent to finish.'
 }, 20000);
 }
 
