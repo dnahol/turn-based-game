@@ -1,0 +1,33 @@
+{
+  "name": "turn-based-game",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "dnahol <dalia.nahol@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-socket-io": "^0.7.0",
+    "socket.io-client": "^1.4.6",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5",
+    "angular-ui-router": "ui-router#^0.3.0",
+    "bootswatch-dist": "superhero",
+    "angular-formly": "^8.2.1",
+    "angular-formly-templates-bootstrap": "^6.3.2",
+    "api-check": "^7.5.5",
+    "jquery": "^2.2.3",
+    "font-awesome": "fontawesome#^4.6.3"
+  },
+  "resolutions": {
+    "angular": "1.5.5"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Turn Based Game!</title>
+
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/bootswatch-dist/css/bootstrap.min.css">
+  <link rel="styleseet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
+  <!-- angular -->
+  <script src="/bower_components/angular/angular.js"></script>
+
+  <!-- jQuery, socket io -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/socket.io-client/socket.io.js"></script>
+
+  <script src="/bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/angular-socket-io/socket.js"></script>
+
+  <!-- controllers -->
+  <script src="/js/controllers.js"></script>
+  <script src="/js/service.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body ng-app="gameApp" ng-controller="mainCtrl">
+  <div class="container">
+
+    <h1>Math Duel!</h1>
+    <hr>
+
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h2 class="panel-title">Players logged on: {{player}}</h2>
+        <h3>{{waitText}}</h3>
+        <span><button class='btn btn-warning' ng-click='startTimer()'>Begin Timer</button></span>
+        <hr>
+        <h1 class="panel-title text-center">{{question.num1}} * {{question.num2}} = __</h1>
+
+      </div>
+      <div class="panel-body">
+        <form ng-submit='checkAnswer(userAns)'>
+          Your Answer: <input ng-model='userAns' type="text">
+          <button type="submit" class='btn btn-success'>Submit</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class='jumbotron'>
+      <h3>Your Answer: {{userAns}} </h3>
+      <h3>Correct Answer: {{correctAns}}</h3>
+      <h3>Your Score: {{userScore}}</h3>
+    </div>
+
+    <hr>
+
+
+
+  </div>
+</body>
+</html>
